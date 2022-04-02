@@ -44,9 +44,8 @@ int main()
 {
 	setlocale(LC_ALL, "");	
 	int N[10], counter = -1, bufer, z, counterZ = 0;
-	ofstream file;
 	string adress = "f.txt";
-	file.open(adress);
+	ofstream file(adress, ios::trunc);	
 	if (file.is_open())
 	{
 		srand(time(NULL));
