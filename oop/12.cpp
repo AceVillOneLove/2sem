@@ -32,7 +32,7 @@ int main()
     }
 
     infile.close();
-    infile.open("numbersi.txt");
+    infile.open("f.txt");
 
     while (!infile.eof())
     {
