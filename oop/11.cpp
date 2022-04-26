@@ -15,8 +15,7 @@ int main()
 		{
 			f << rand() % 6 - 2 << "\t";
 		}
-	}
-	f.close();
+	}	
 	ifstream h("f.txt");	
 	ifstream k("f.txt");
 	ofstream g("g.txt");
