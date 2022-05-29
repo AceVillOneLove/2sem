@@ -1,0 +1,122 @@
+#include <iostream>
+#include <string>
+
+using namespace std;
+
+class Object
+{
+public:
+	int x1, x2, y1, y2, width, height, amount;
+	float size;
+	string color, text;	
+};
+
+class Figure : public Object
+{
+public:
+};
+
+class Ellipse : public Figure
+{
+public:
+	Ellipse(int x2, int y2, int width, int height,string color)
+	{
+		this->x2 = x2;
+		this->y2 = y2;
+		this->width = width;
+		this->height = height;
+		this->color = color;
+		print();
+	}
+	void print()
+	{
+		cout << "Ellipse: posX = " << x2 << " posY = " << y2 << " Width = " << width << " Height = " << height << " color = " << color << endl;
+	}
+
+};
+
+class Polygon : public Figure
+{
+public:
+	Polygon() {}
+	Polygon(int x2, int y2, int width, int height, string color, int amount)
+	{
+		this->x2 = x2;
+		this->y2 = y2;
+		this->width = width;
+		this->height = height;
+		this->amount = amount;
+		this->color = color;
+		print();
+	}
+	void print()
+	{
+		cout << "Polygon: posX = " << x2 << " posY = " << y2 << " Width = " << width << " Height = " << height << " amount = " << amount << " color = " << color << endl;
+	}
+};
+
+class Text : public Object
+{
+public:
+	Text(int x1, int y1, float size, string text, string color)
+	{
+		this->x1 = x1;
+		this->y1 = y1;
+		this->size = size;
+		this->text = text;
+		this->color = color;
+		print();
+	}
+	void print()
+	{
+		cout <<"Text: posX = " << x1 << " posY = " << y1 << " size = " << size << " text = " << text << " txtColor = " << color << endl;
+	}
+};
+
+class Star : public Polygon
+{
+public:
+	Star(int x2, int y2, int width, int height, string color, int amount)
+	{
+		this->x2 = x2;
+		this->y2 = y2;
+		this->width = width;
+		this->height = height;
+		this->amount = amount;
+		this->color = color;
+		print();
+	}
+	void print()
+	{
+		cout << "Star: posX = " << x2 << " posY = " << y2 << " Width = " << width << " Height = " << height << " amount = " << amount << " color = " << color << endl;
+	}
+};
+
+class Rectangle : public Polygon
+{
+public:
+	Rectangle(int x2, int y2, int width, int height, string color)
+	{
+		this->x2 = x2;
+		this->y2 = y2;
+		this->width = width;
+		this->height = height;
+		this->color = color;
+		print();
+	}
+	void print()
+	{
+		cout << "Rectangle: posX = " << x2 << " posY = " << y2 << " Width = " << width << " Height = " << height << " color = " << color << endl;
+	}
+};
+
+
+int main()
+{
+	setlocale(LC_ALL, "rus");
+	Ellipse ell(1, 1, 12, 15, "blue");
+	Text txt(1, 1, 1.2, "Hi", "blue");	
+	Polygon p(1, 1, 12, 12, "red", 4);
+	Star st(1, 1, 12, 15, "cherry", 5);
+	Rectangle rec(2, 2, 14, 16, "blue");
+}
